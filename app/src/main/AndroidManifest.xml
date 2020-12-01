@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".TicketMain"></activity>
+        <activity android:name=".RecipeFavourites"></activity>
+        <activity android:name=".TicketMain" />
         <activity android:name=".RecipeMain" />
         <activity android:name=".CovidMain" />
         <activity android:name=".AudioMain" />

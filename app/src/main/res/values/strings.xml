@@ -7,5 +7,19 @@
     <string name="mainmenu_covid">COVID-19 Case Data</string>
     <string name="mainmenu_audio">Audio Database</string>
 
+    <!-- Shared Strings. Put anything you think might be useful for other apps here. -->
+    <string name="shared_ok">Ok</string>
+    <string name="shared_yes">Yes</string>
+    <string name="shared_no">No</string>
+    <string name="shared_search_tooltip">Search…</string>
+    <string name="shared_search">Search</string>
 
+    <!-- Audio App -->
+
+    <!-- Covid App -->
+
+    <!-- Recipe App -->
+    
+    <!-- Ticket App -->
+    
 </resources>
