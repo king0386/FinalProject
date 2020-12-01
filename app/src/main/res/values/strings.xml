@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">FinalProject</string>
+
+    <!-- Main Menu strings -->
+    <string name="mainmenu_ticketmaster">Ticket Master</string>
+    <string name="mainmenu_recipe">Recipe Search</string>
+    <string name="mainmenu_covid">COVID-19 Case Data</string>
+    <string name="mainmenu_audio">Audio Database</string>
+
+
 </resources>
