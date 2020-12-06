@@ -24,6 +24,8 @@
     <string name="shared_title">Title</string>
     <string name="shared_loading">Loading…</string>
     <string name="shared_undo">Undo</string>
+    <string name="shared_help">Help</string>
+    <string name="shared_info">Information</string>
 
     <!-- Audio App -->
 
