@@ -6,6 +6,7 @@
     <string name="mainmenu_recipe">Recipe Search</string>
     <string name="mainmenu_covid">COVID-19 Case Data</string>
     <string name="mainmenu_audio">Audio Database</string>
+    <string name="mainmenu_home">Home</string>
 
     <!-- Shared Strings. Put anything you think might be useful for other apps here. -->
     <string name="shared_ok">Ok</string>
@@ -13,10 +14,29 @@
     <string name="shared_no">No</string>
     <string name="shared_search_tooltip">Search…</string>
     <string name="shared_search">Search</string>
+    <string name="shared_search_header">Search Results</string>
+    <string name="shared_hide">Hide</string>
+    <string name="shared_open">Open</string>
+    <string name="shared_save">Save</string>
+    <string name="shared_fav">Do you want to add to favourites?</string>
+    <string name="shared_close">Close</string>
 
     <!-- Audio App -->
 
     <!-- Covid App -->
+    <string name="covidCaseData">Covid-19 Data by: Stewart King</string>
+    <string name="CovidHeader">Welcome to the Covid Search Page</string>
+    <string name="covidAuthor">Stewart King</string>
+    <string name="covidVersion">Version 1.0</string>
+    <string name="country">Country</string>
+    <string name="hint">Type Here</string>
+    <string name="date">Date(YYYY-MM-DD)</string>
+    <string name="CovidErrTitle">Error</string>
+    <string name="CovidErrMsg">Check Country Name and Date, or check Date Format(YYYY-MM-DD</string>
+    <string name="menu_help">Menu</string>
+    <string name="fav_help">Favourites</string>
+    <string name="CovidWelcome">Welcome to the Covid search page. Input a country name and date to search. To save the
+    result, press the "favourite" button. To delete a saved record, click the record you want deleted.</string>
 
     <!-- Recipe App -->
     

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/menu1"
+        android:icon="@drawable/ticket_icon"
+        android:title="@string/mainmenu_ticketmaster"
+        android:orderInCategory="100" />
+
+    <item android:id="@+id/menu2"
+        android:icon="@drawable/recipe_icon"
+        android:title="@string/mainmenu_recipe"
+        android:orderInCategory="200" />
+
+    <item android:id="@+id/menu3"
+        android:icon="@drawable/music_icon"
+        android:title="@string/mainmenu_audio"
+        android:orderInCategory="300" />
+    <item android:id="@+id/menu4"
+        android:icon="@drawable/home_icon"
+        android:title="@string/mainmenu_home"
+        android:orderInCategory="400" />
+
+
+</menu>
