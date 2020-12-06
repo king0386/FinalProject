@@ -6,6 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".RecipeMain">
 
+    <ProgressBar
+        android:id="@+id/recipe_main_progressbar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/recipe_main_ingredients"
+        tools:visibility="visible" />
+
     <ImageButton
         android:id="@+id/recipe_main_searchconfirm"
         android:layout_width="wrap_content"
@@ -24,8 +32,25 @@
         android:id="@+id/recipe_main_query"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:hint="@string/shared_search_tooltip"
         android:layout_toStartOf="@id/recipe_main_searchconfirm"
-        android:layout_toEndOf="@id/recipe_main_favourites"
-        android:text="TextView" />
+        android:inputType="textPersonName"
+        android:layout_toEndOf="@id/recipe_main_favourites" />
+
+    <ListView
+        android:id="@+id/recipe_main_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/recipe_main_ingredients"
+        android:layout_alignParentEnd="false" >
+
+    </ListView>
+
+    <Button
+        android:id="@+id/recipe_main_ingredients"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/recipe_main_favourites"
+        android:text="@string/recipe_ingredients" />
 
 </RelativeLayout>

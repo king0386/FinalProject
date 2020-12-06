@@ -11,15 +11,31 @@
     <string name="shared_ok">Ok</string>
     <string name="shared_yes">Yes</string>
     <string name="shared_no">No</string>
-    <string name="shared_search_tooltip">Search…</string>
+    <string name="shared_add">Add</string>
+    <string name="shared_close">Close</string>
+    <string name="shared_remove">Remove</string>
+    <string name="shared_removed">Removed</string>
+    <string name="shared_delete">Delete</string>
     <string name="shared_search">Search</string>
+    <string name="shared_search_tooltip">Search…</string>
+    <string name="shared_id">ID</string>
+    <string name="shared_id_column">ID: </string>
+    <string name="shared_name">Name</string>
+    <string name="shared_title">Title</string>
+    <string name="shared_loading">Loading…</string>
 
     <!-- Audio App -->
 
     <!-- Covid App -->
 
     <!-- Recipe App -->
-    
+    <string name="recipe_ingredients">Ingredients</string>
+    <string name="recipe_ingredient_singular">Ingredient</string>
+    <string name="recipe_ingredient_tooltip">Ingredient…</string>
+    <string name="recipe_favourite_toggle">In Favourites</string>
+    <string name="recipe_ingredient_delete_title">Delete Ingredient</string>
+    <string name="recipe_ingredient_delete">Are you sure you want to delete</string>
+
     <!-- Ticket App -->
-    
+
 </resources>

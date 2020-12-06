@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RecipeIngredients">
+
+    <Button
+        android:id="@+id/recipe_ingredients_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:text="@string/shared_add" />
+
+    <EditText
+        android:id="@+id/recipe_ingredients_query"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_toStartOf="@id/recipe_ingredients_add"
+        android:ems="10"
+        android:hint="@string/recipe_ingredient_tooltip"
+        android:inputType="textPersonName" />
+
+    <ListView
+        android:id="@+id/recipe_ingredients_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/recipe_ingredients_query" />
+</RelativeLayout>

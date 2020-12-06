@@ -2,6 +2,7 @@ package com.example.finalproject;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -17,6 +18,40 @@ public class MainActivity extends AppCompatActivity {
 
         startActivity(intent);
     }
+
+
+    /**
+     * Returns a title according to the class. (Example: Recipe)
+     * @param context Context, use "this" on each activity.
+     * @return String title header.
+     */
+    public static String getTitle(Context context) {
+        String text = context.getClass().getSimpleName().toLowerCase();
+        String returning = "";
+
+        if (text.startsWith("recipe")) {
+            returning += context.getString(R.string.mainmenu_recipe);
+        } else if (text.startsWith("audio")) {
+            returning += context.getString(R.string.mainmenu_audio);
+        } else if (text.startsWith("ticket")) {
+            returning += context.getString(R.string.mainmenu_ticketmaster);
+        } else if (text.startsWith("covid")) {
+            returning += context.getString(R.string.mainmenu_covid);
+        }
+
+        return returning;
+    }
+
+    /**
+     * Returns a title according to the class. (Example: Recipe - Ingredients)
+     * @param context Context, use "this" on each activity.
+     * @param extra_title Additional title to add.
+     * @return String title header.
+     */
+    public static String getTitle(Context context, int extra_title) {
+        return getTitle(context) + " - " + context.getString(extra_title);
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
