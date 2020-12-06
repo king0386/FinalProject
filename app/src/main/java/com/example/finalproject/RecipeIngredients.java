@@ -78,6 +78,11 @@ public class RecipeIngredients extends AppCompatActivity {
                 RecipeMain.addIngredient(this, text);
                 ingredient_box.setText("");
 
+                Toast.makeText(this,
+                        getString(R.string.recipe_ingredient_added) + " \"" + text + "\".",
+                        Toast.LENGTH_SHORT)
+                        .show();
+
                 adapter.notifyDataSetChanged();
             }
         });

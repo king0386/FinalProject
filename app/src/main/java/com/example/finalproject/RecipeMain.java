@@ -3,6 +3,7 @@ package com.example.finalproject;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -16,8 +17,11 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.ProgressBar;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.material.snackbar.Snackbar;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -44,10 +48,17 @@ public class RecipeMain extends AppCompatActivity {
     ProgressBar progress_bar;
     RecipeMainAdapter listadapter;
 
-    private void changeActivity(Class<?> cls) {
+    private void changeActivity(Class<?> cls, Bundle data) {
         Intent intent = new Intent(this, cls);
 
+        if (data != null)
+            intent.putExtras(data);
+
         startActivity(intent);
+    }
+
+    private void changeActivity(Class<?> cls) {
+        changeActivity(cls, null);
     }
 
     private static void refreshIngredients(Context context) {
@@ -70,11 +81,14 @@ public class RecipeMain extends AppCompatActivity {
     public static void addRecipe(Context context, RecipeObject recipe) {
         RecipeDatabase.getInstance(context).addRecipe(recipe);
 
+        recipe.IsFavourite = true;
         Recipes.add(recipe);
     }
 
     public static void removeRecipe(Context context, RecipeObject recipe) {
         RecipeDatabase.getInstance(context).removeRecipe(recipe);
+
+        recipe.IsFavourite = false;
 
         Recipes.remove(recipe);
     }
@@ -137,6 +151,35 @@ public class RecipeMain extends AppCompatActivity {
         getUpdatePreference(this, query_box, "main_query");
 
         ((ListView)findViewById(R.id.recipe_main_list)).setAdapter(listadapter);
+
+        ((ListView)findViewById(R.id.recipe_main_list)).setOnItemClickListener((adapterView, view, i, l) -> {
+            Bundle data = new Bundle();
+
+            data.putInt("ItemID", i);
+            data.putBoolean("FavouriteList", false);
+
+            changeActivity(RecipeItem.class, data);
+        });
+
+        ((ListView)findViewById(R.id.recipe_main_list)).setOnItemLongClickListener((adapterView, view, i, l) -> {
+            RecipeObject recipe = QueryRecipes.get(i);
+
+            new AlertDialog.Builder(this)
+                    .setTitle(R.string.recipe_database_information)
+                    .setMessage(
+                            getString(R.string.shared_id_column) + " " + recipe.URL + "\n" +
+                            "Index: " + i + "\n" +
+                            getString(R.string.shared_title) + ": " + recipe.Title + "\n" +
+                            getString(R.string.recipe_ingredients) + ": " + recipe.Ingredients + "\n" +
+                            getString(R.string.recipe_thumbnail) + ": " + recipe.Thumbnail + "\n" +
+                            getString(R.string.recipe_favourite_toggle) + ": " +
+                                    (recipe.IsFavourite ? getString(R.string.shared_yes) : getString(R.string.shared_no)) + "\n"
+                    )
+                    .setNeutralButton(R.string.shared_close, (dialogInterface, i1) -> dialogInterface.dismiss())
+                    .show();
+
+            return true;
+        });
 
 
         findViewById(R.id.recipe_main_searchconfirm).setOnClickListener((View v) -> {
@@ -208,6 +251,11 @@ public class RecipeMain extends AppCompatActivity {
 
             v.findViewById(R.id.recipe_main_item_favourite).setOnClickListener((View vs) -> {
                 recipe.IsFavourite = !recipe.IsFavourite;
+
+                Toast.makeText(RecipeMain.this,
+                        "\"" + recipe.Title + "\" " + (recipe.IsFavourite ? getString(R.string.recipe_favourite_in) : getString(R.string.recipe_favourite_out)),
+                        Toast.LENGTH_LONG)
+                        .show();
 
                 if (recipe.IsFavourite) {
                     addRecipe(RecipeMain.this, recipe);
@@ -307,7 +355,7 @@ public class RecipeMain extends AppCompatActivity {
 
                     RecipeObject obj = new RecipeObject(
                             query.getString("href"),
-                            query.getString("title"),
+                            query.getString("title").trim(),
                             query.getString("ingredients"),
                             query.getString("thumbnail")
                     );

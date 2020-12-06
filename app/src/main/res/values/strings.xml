@@ -23,6 +23,7 @@
     <string name="shared_name">Name</string>
     <string name="shared_title">Title</string>
     <string name="shared_loading">Loading…</string>
+    <string name="shared_undo">Undo</string>
 
     <!-- Audio App -->
 
@@ -33,8 +34,13 @@
     <string name="recipe_ingredient_singular">Ingredient</string>
     <string name="recipe_ingredient_tooltip">Ingredient…</string>
     <string name="recipe_favourite_toggle">In Favourites</string>
+    <string name="recipe_favourite_in">Is now in favourites</string>
+    <string name="recipe_favourite_out">Is no longer in favourites</string>
     <string name="recipe_ingredient_delete_title">Delete Ingredient</string>
     <string name="recipe_ingredient_delete">Are you sure you want to delete</string>
+    <string name="recipe_database_information">Recipe Database Information</string>
+    <string name="recipe_thumbnail">Thumbnail</string>
+    <string name="recipe_ingredient_added">Added Ingredient</string>
 
     <!-- Ticket App -->
 

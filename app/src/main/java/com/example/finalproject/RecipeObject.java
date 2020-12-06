@@ -19,7 +19,7 @@ public class RecipeObject {
 
         for (String ingredient :
                 ingredients.split(",")) {
-            Ingredients.add(ingredient.substring(0, 1).toUpperCase() + ingredient.substring(1));
+            Ingredients.add(ingredient.trim().substring(0, 1).toUpperCase() + ingredient.trim().substring(1));
         }
 
         Thumbnail = thumbnail;

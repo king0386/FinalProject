@@ -129,11 +129,12 @@ public class RecipeDatabase extends SQLiteOpenHelper {
         if (query.moveToFirst()) {
             while (!query.isAfterLast()) {
                 String URL = query.getString(query.getColumnIndex(COL_URL));
-                String Title = query.getString(query.getColumnIndex(COL_Title));
+                String Title = query.getString(query.getColumnIndex(COL_Title)).trim();
                 String Ingredients = query.getString(query.getColumnIndex(COL_Ingredients));
                 String Thumbnail = query.getString(query.getColumnIndex(COL_Thumbnail));
 
-                RecipeObject recipe = new RecipeObject(URL, Title, Ingredients, Thumbnail);
+                RecipeObject recipe = new RecipeObject(URL, Title, Ingredients, Thumbnail, true);
+
                 recipes.add(recipe);
 
                 query.moveToNext();
