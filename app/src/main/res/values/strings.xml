@@ -25,7 +25,7 @@
     <!-- Audio App -->
 
     <!-- Covid App -->
-    <string name="covidCaseData">Covid-19 Data by: Stewart King</string>
+    <string name="covidCaseData">Covid-19 Data</string>
     <string name="CovidHeader">Welcome to the Covid Search Page</string>
     <string name="covidAuthor">Stewart King</string>
     <string name="covidVersion">Version 1.0</string>
@@ -34,7 +34,7 @@
     <string name="date">Date(YYYY-MM-DD)</string>
     <string name="CovidErrTitle">Error</string>
     <string name="CovidErrMsg">Check Country Name and Date, or check Date Format(YYYY-MM-DD</string>
-    <string name="menu_help">Menu</string>
+    <string name="menu_help">Help</string>
     <string name="fav_help">Favourites</string>
     <string name="CovidWelcome">Welcome to the Covid search page. Input a country name and date to search. To save the
     result, press the "favourite" button. To delete a saved record, click the record you want deleted.</string>
