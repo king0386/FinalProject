@@ -31,6 +31,8 @@
     <string name="shared_exit">Exit</string>
 
     <!-- Audio App -->
+    <string name="audio_hello">Find Your Favorite Artists Music!</string>
+    <string name="audio_search_hint">Enter An Artists Name...</string>
 
     <!-- Covid App -->
 
