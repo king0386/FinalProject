@@ -1,36 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
-
-    <Button
-        android:id="@+id/mainmenu_audio"
+    <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/mainmenu_audio" />
+        android:id="@+id/hometoolbar"/>
 
-    <Button
-        android:id="@+id/mainmenu_covid"
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/homedrawer_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/mainmenu_audio"
-        android:text="@string/mainmenu_covid" />
+        android:layout_height="match_parent"
+        tools:openDrawer="start">
 
-    <Button
-        android:id="@+id/mainmenu_recipe"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/mainmenu_covid"
-        android:text="@string/mainmenu_recipe" />
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:orientation="vertical">
 
-    <Button
-        android:id="@+id/mainmenu_ticket"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/mainmenu_recipe"
-        android:text="@string/mainmenu_ticketmaster" />
-</RelativeLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/homeWelcome"
+                android:textSize="22sp"
+                android:textColor="@color/colorAccent"
+                android:text="@string/homeheader"
+                android:layout_gravity="center" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/introduction"
+                android:layout_gravity="center"
+                android:textSize="20sp"/>
+        </LinearLayout>
+
+        <!-- Navigation Drawert-->
+        <com.google.android.material.navigation.NavigationView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:fitsSystemWindows="true"
+            app:headerLayout="@layout/homenavmenuheader"
+            app:menu="@menu/mainmenu"
+            android:id="@+id/homenav_view"/>
+    </androidx.drawerlayout.widget.DrawerLayout>
+
+</LinearLayout>

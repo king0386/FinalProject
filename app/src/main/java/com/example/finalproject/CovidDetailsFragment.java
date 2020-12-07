@@ -97,7 +97,7 @@ public class CovidDetailsFragment  extends Fragment {
             LayoutInflater inflater = getLayoutInflater();
             View view = inflater.inflate(R.layout.activity_covid_search_result, parent, false);
             if (sr != null) {
-                TextView savedView = view.findViewById(R.id.searchResult);
+                TextView savedView = view.findViewById(R.id.CovidSearchResult);
                 savedView.setText(sr);
             }
             return view;

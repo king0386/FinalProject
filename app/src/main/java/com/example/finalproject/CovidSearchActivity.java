@@ -234,7 +234,7 @@ public class CovidSearchActivity extends AppCompatActivity {
             LayoutInflater inflater = getLayoutInflater();
             View view = inflater.inflate(R.layout.activity_covid_search_result, parent, false);
             if (sr != null) {
-                TextView searchView = view.findViewById(R.id.searchResult);
+                TextView searchView = view.findViewById(R.id.CovidSearchResult);
                 searchView.setText(sr.getProvince()+":"+sr.getCase());
             }
             return view;

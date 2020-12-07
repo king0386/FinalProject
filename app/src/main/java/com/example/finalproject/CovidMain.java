@@ -44,7 +44,7 @@ import java.util.ArrayList;
  */
 public class CovidMain extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
     /**
-     * Store SharedPref
+     * SharedPref
      */
     SharedPreferences prefs=null;
     /**
@@ -77,7 +77,7 @@ public class CovidMain extends AppCompatActivity implements NavigationView.OnNav
 
         Toolbar tBar = (Toolbar)findViewById(R.id.toolbar);
         //This loads the toolbar, which calls onCreateOptionsMenu below:
-        setSupportActionBar(tBar);
+        //setSupportActionBar(tBar);
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, tBar, R.string.shared_open, R.string.shared_close);
         drawer.addDrawerListener(toggle);
@@ -322,7 +322,7 @@ public class CovidMain extends AppCompatActivity implements NavigationView.OnNav
             LayoutInflater inflater = getLayoutInflater();
             View view = inflater.inflate(R.layout.activity_covid_search_result, parent, false);
             if (sr != null) {
-                TextView savedView = view.findViewById(R.id.searchResult);
+                TextView savedView = view.findViewById(R.id.CovidSearchResult);
                 savedView.setText(sr);
             }
             return view;

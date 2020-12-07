@@ -20,6 +20,7 @@
     <string name="shared_save">Save</string>
     <string name="shared_fav">Do you want to add to favourites?</string>
     <string name="shared_close">Close</string>
+    <string name="shared_version">Version 1.0</string>
 
     <!-- Audio App -->
 
@@ -37,6 +38,8 @@
     <string name="fav_help">Favourites</string>
     <string name="CovidWelcome">Welcome to the Covid search page. Input a country name and date to search. To save the
     result, press the "favourite" button. To delete a saved record, click the record you want deleted.</string>
+    <string name="homeheader">Welcome to Our App!</string>
+    <string name="introduction">This App was developed by: Ali, Manalibharat, Saad, and Stewart</string>
 
     <!-- Recipe App -->
     
