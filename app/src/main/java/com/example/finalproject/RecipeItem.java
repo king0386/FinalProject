@@ -1,5 +1,6 @@
 package com.example.finalproject;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.res.ResourcesCompat;
 
@@ -11,6 +12,8 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
@@ -32,12 +35,28 @@ import java.net.URLEncoder;
 import java.security.MessageDigest;
 
 public class RecipeItem extends AppCompatActivity {
+    private static final String INFO = "To open the recipe instructions and details in your web browser, " +
+            "simply click the URL (ID) of the recipe and it will load your system web browser.\n" +
+            "To toggle an item in favourites (save or unsave), simply change the checkbox of favourites.";
+
     String thumbnail;
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        return MainActivity.handleMenuClicks(this, RecipeMain.CREDITS, INFO, item);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.top_app_bar, menu);
+        return true;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recipe_item);
+        MainActivity.registerToolbar(this, RecipeMain.CREDITS, INFO, R.string.recipe_view_item);
 
         Bundle data = getIntent().getExtras();
 

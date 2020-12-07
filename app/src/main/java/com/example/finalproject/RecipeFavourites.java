@@ -1,11 +1,14 @@
 package com.example.finalproject;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -18,6 +21,9 @@ import android.widget.Toast;
 import com.google.android.material.snackbar.Snackbar;
 
 public class RecipeFavourites extends AppCompatActivity {
+    private static final String INFO = "To view an item, simply click on the title of it.\n" +
+            "To see the database information of a recipe, long click it.\n" +
+            "To remove an item from favourites, click the star icon.";
 
     RecipeFavouritesAdapter adapter;
 
@@ -31,9 +37,21 @@ public class RecipeFavourites extends AppCompatActivity {
     }
 
     @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        return MainActivity.handleMenuClicks(this, RecipeMain.CREDITS, INFO, item);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.top_app_bar, menu);
+        return true;
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recipe_favourites);
+        MainActivity.registerToolbar(this, RecipeMain.CREDITS, INFO, R.string.recipe_favourites);
 
         adapter = new RecipeFavouritesAdapter();
 

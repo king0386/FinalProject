@@ -8,7 +8,7 @@
         android:title="@string/shared_help"
         app:showAsAction="always" />
     <item
-        android:id="@+id/toolbar_info"
+        android:id="@+id/toolbar_credit"
         android:icon="@android:drawable/ic_dialog_info"
         android:title="@string/shared_info"
         app:showAsAction="always" />

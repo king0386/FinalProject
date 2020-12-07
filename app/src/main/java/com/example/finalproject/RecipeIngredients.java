@@ -1,10 +1,13 @@
 package com.example.finalproject;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -17,6 +20,11 @@ import android.widget.Toast;
 import java.util.List;
 
 public class RecipeIngredients extends AppCompatActivity {
+    private static final String INFO = "To add an ingredient, simply type it in the edit box and press \"Add\" button.\n" +
+            "To remove an ingredient, you can use the following options:\n" +
+            "\t1- Long click on it, and confirm.\n" +
+            "\t2- Click on remove icon, and confirm.\n\n" +
+            "To read an ingredient in bigger font/size or to know the database ID, simply tap the title of that Ingredient.";
 
     IngredientsAdapter adapter;
 
@@ -55,10 +63,21 @@ public class RecipeIngredients extends AppCompatActivity {
     }
 
     @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        return MainActivity.handleMenuClicks(this, RecipeMain.CREDITS, INFO, item);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.top_app_bar, menu);
+        return true;
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recipe_ingredients);
-        setTitle(MainActivity.getTitle(this, R.string.recipe_ingredients));
+        MainActivity.registerToolbar(this, RecipeMain.CREDITS, INFO, R.string.recipe_ingredients);
 
         adapter = new IngredientsAdapter();
 

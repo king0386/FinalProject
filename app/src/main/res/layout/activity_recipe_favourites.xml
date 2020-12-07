@@ -1,13 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+<RelativeLayout android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     tools:context=".RecipeFavourites">
 
-    <ListView
-        android:id="@+id/recipe_favourites_list"
+    <include
+        layout="@layout/activity_toolbar"
+        android:id="@+id/toolbar" />
+
+    <androidx.drawerlayout.widget.DrawerLayout android:id="@+id/drawer_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        tools:context=".RecipeFavourites">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ListView
+                android:id="@+id/recipe_favourites_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </RelativeLayout>
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/navigation_view"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start|left"
+            app:menu="@menu/nav_bar" />
+    </androidx.drawerlayout.widget.DrawerLayout>
 </RelativeLayout>

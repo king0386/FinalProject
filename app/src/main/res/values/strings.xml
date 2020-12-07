@@ -8,11 +8,12 @@
     <string name="mainmenu_audio">Audio Database</string>
 
     <!-- Shared Strings. Put anything you think might be useful for other apps here. -->
-    <string name="shared_ok">Ok</string>
+    <string name="shared_ok">OK</string>
     <string name="shared_yes">Yes</string>
     <string name="shared_no">No</string>
     <string name="shared_add">Add</string>
     <string name="shared_close">Close</string>
+    <string name="shared_open">Open</string>
     <string name="shared_remove">Remove</string>
     <string name="shared_removed">Removed</string>
     <string name="shared_delete">Delete</string>
@@ -26,6 +27,8 @@
     <string name="shared_undo">Undo</string>
     <string name="shared_help">Help</string>
     <string name="shared_info">Information</string>
+    <string name="shared_credits">Credits</string>
+    <string name="shared_exit">Exit</string>
 
     <!-- Audio App -->
 
@@ -38,6 +41,8 @@
     <string name="recipe_favourite_toggle">In Favourites</string>
     <string name="recipe_favourite_in">Is now in favourites</string>
     <string name="recipe_favourite_out">Is no longer in favourites</string>
+    <string name="recipe_favourites">Favourites</string>
+    <string name="recipe_view_item">View Item</string>
     <string name="recipe_ingredient_delete_title">Delete Ingredient</string>
     <string name="recipe_ingredient_delete">Are you sure you want to delete</string>
     <string name="recipe_database_information">Recipe Database Information</string>

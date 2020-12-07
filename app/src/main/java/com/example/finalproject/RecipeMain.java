@@ -43,6 +43,14 @@ import java.util.List;
 
 public class RecipeMain extends AppCompatActivity {
 
+    public static final String CREDITS = "Developer: Ali Deym\nStudent Number: 040990616\nFall 2020 CST2335.";
+    private static final String INFO = "Navigate through the menus by clicking them.\n" +
+            "After searching for an item, you can click the favourite icon to save it.\n" +
+            "By clicking a recipe, you will have more information, as well as the picture of recipe.\n" +
+            "Holding long click on a recipe will give you database information.\n" +
+            "Press the Ingredients button to see the ingredients you are searching for.\n" +
+            "Press the Favourite button (Star) to see your saved recipes.";
+
     public static String PREFERENCE_NAME = "recipe";
 
     public static List<String> Ingredients;
@@ -129,7 +137,7 @@ public class RecipeMain extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        return MainActivity.handleMenuClicks(this, "tEST,", "Help", item);
+        return MainActivity.handleMenuClicks(this, CREDITS, INFO, item);
     }
 
     @Override
@@ -142,7 +150,7 @@ public class RecipeMain extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recipe_main);
-        MainActivity.registerToolbar(this);
+        MainActivity.registerToolbar(this, CREDITS, INFO);
 
         Ingredients = new ArrayList<>();
         Recipes = new ArrayList<>();
