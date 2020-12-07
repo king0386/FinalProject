@@ -1,2 +1,101 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="app_name">FinalProject</string>
+
+    <!-- Main Menu strings -->
+    <string name="mainmenu_ticketmaster">Ticket Master</string>
+    <string name="mainmenu_recipe">Recherche de recette</string>
+    <string name="mainmenu_covid">Données de cas Covid-19</string>
+    <string name="mainmenu_audio">Base de données audio</string>
+    <string name="mainmenu_home">Accueil</string>
+
+    <!-- Shared Strings. Put anything you think might be useful for other apps here. -->
+    <string name="shared_ok">D\'accord</string>
+    <string name="shared_yes">Oui</string>
+    <string name="shared_no">Non</string>
+    <string name="shared_add">Ajouter</string>
+    <string name="shared_close">proche</string>
+    <string name="shared_open">Ouvert</string>
+    <string name="shared_remove">Retirer</string>
+    <string name="shared_removed">Supprimé</string>
+    <string name="shared_delete">Supprimer</string>
+    <string name="shared_search">Chercher</string>
+    <string name="shared_search_tooltip">Chercher…</string>
+    <string name="shared_id">ID</string>
+    <string name="shared_id_column">ID: </string>
+    <string name="shared_name">Nom</string>
+    <string name="shared_title">Titre</string>
+    <string name="shared_loading">Chargement…</string>
+    <string name="shared_undo">annuler</string>
+    <string name="shared_help">Aidez-moi</string>
+    <string name="shared_info">Information</string>
+    <string name="shared_credits">Crédits</string>
+    <string name="shared_exit">Sortie</string>
+    <string name="shared_hide">Cacher</string>
+    <string name="shared_search_header">Résultats de recherche</string>
+    <string name="shared_save">sauvegarder</string>
+    <string name="shared_version">Version 1.0</string>
+    <string name="shared_delete_confirm">Etes-vous sûr que vous voulez supprimer?</string>
+    <string name="shared_fav">Voulez-vous ajouter aux favoris?</string>
+    <string name="shared_error">Voulez-vous ajouter aux favoris?</string>
+    <string name="shared_show_fav">actualiser les favoris</string>
+    <string name="main_help">Cliquez sur un bouton pour accéder à l\'application</string>
+
+    <!-- Audio App -->
+
+    <!-- Covid App -->
+    <string name="covidCaseData">Données Covid-19</string>
+    <string name="CovidHeader">Bienvenue sur la page de recherche Covid</string>
+    <string name="covidAuthor">Stewart King</string>
+    <string name="covidVersion">Version 1.0</string>
+    <string name="country">Pays</string>
+    <string name="dateTwo">Date</string>
+    <string name="hint">Écrivez ici</string>
+    <string name="date">Date(YYYY-MM-DD)</string>
+    <string name="CovidErrTitle">Erreur</string>
+    <string name="CovidErrMsg">Vérifiez le nom et la date du pays ou vérifiez le format de la date (AAAA-MM-JJ)</string>
+    <string name="menu_help">Aidez-moi</string>
+    <string name="fav_help">Favoris</string>
+    <string name="CovidWelcome">Bienvenue sur la page de recherche de Covid. Saisissez un nom de pays et une date à rechercher. Pour sauver le
+    résultat, appuyez sur le bouton "favori". Pour supprimer un enregistrement enregistré, maintenez enfoncée l\'enregistrement que vous souhaitez supprimer.</string>
+    <string name="homeheader">Bienvenue sur notre application!</string>
+    <string name="introduction">Cette application a été développée par: Ali, Manalibharat, Saad, et Stewart</string>
+    <string name="countryIs">Le pays c\'est: </string>
+    <string name="dateIs">Le Date c\'est: </string>
+    <string name="covid_credits">Développeur: Stewart King\nNuméro d\'étudiant: 040793799\nAutomne 2020 CST2335.</string>
+
+    <!-- Recipe App -->
+    <string name="recipe_ingredients">Ingrédients</string>
+    <string name="recipe_ingredient_singular">Ingrédient</string>
+    <string name="recipe_ingredient_tooltip">Ingrédient…</string>
+    <string name="recipe_favourite_toggle">Dans les favoris</string>
+    <string name="recipe_favourite_in">Est maintenant dans les favoris</string>
+    <string name="recipe_favourite_out">N\'est plus dans les favoris</string>
+    <string name="recipe_favourites">Favoris</string>
+    <string name="recipe_view_item">Regarder l\'objet</string>
+    <string name="recipe_ingredient_delete_title">Supprimer l\'ingrédient</string>
+    <string name="recipe_ingredient_delete">Etes-vous sûr que vous voulez supprimer</string>
+    <string name="recipe_database_information">Informations sur la base de données de recettes</string>
+    <string name="recipe_thumbnail">La vignette</string>
+    <string name="recipe_ingredient_added">Ingrédient ajouté</string>
+    <string name="recipe_credits">Développeur: Ali Deym\nSNuméro d\'étudiant: 040990616\nAutomne 2020 CST2335.</string>
+    <string name="recipe_main_info">Naviguez dans les menus en cliquant dessus.\n
+            Après avoir recherché un élément, vous pouvez cliquer sur l\'icône des favoris pour l\'enregistrer.\n
+            En cliquant sur une recette, vous aurez plus d\'informations, ainsi que l\'image de la recette.\n
+            Un clic long sur une recette vous donnera des informations sur la base de données.\n
+            Appuyez sur le bouton Ingrédients pour voir les ingrédients que vous recherchez.\n
+            Appuyez sur le bouton Favoris (étoile) pour voir vos recettes enregistrées.</string>
+    <string name="recipe_ingredients_info">Pour ajouter un ingrédient, saisissez-le simplement dans la zone d\'édition et appuyez sur le bouton "Ajouter".\n
+            Pour supprimer un ingrédient, vous pouvez utiliser les options suivantes:\n
+            1- Cliquez longuement dessus et confirmez.\n
+            2- Cliquez sur l\'icône de suppression et confirmez.\n\n
+            Pour lire un ingrédient dans une police / taille plus grande ou pour connaître l\'ID de la base de données, appuyez simplement sur le titre de cet ingrédient.</string>
+    <string name="recipe_favourites_info">Pour afficher un élément, cliquez simplement sur son titre.\n
+            Pour voir les informations de la base de données d\'une recette, cliquez longuement dessus.\n
+            Pour supprimer un élément des favoris, cliquez sur l\'icône en forme d\'étoile.</string>
+    <string name="recipe_item_info">Pour ouvrir les instructions et les détails de la recette dans votre navigateur Web,
+            cliquez simplement sur l\'URL (ID) de la recette et il chargera le navigateur Web de votre système.\n
+            Pour basculer un élément dans les favoris (enregistrer ou désenregistrer), il vous suffit de cocher la case des favoris.</string>
+
+    <!-- Ticket App -->
+
+</resources>

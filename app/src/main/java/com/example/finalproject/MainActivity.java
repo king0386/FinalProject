@@ -21,7 +21,8 @@ import com.google.android.material.navigation.NavigationView;
 public class MainActivity extends AppCompatActivity {
     public static final String INFO = "Click on the buttons to go through each app, or use the hamburger icon " +
             "(Navigation Drawer) to navigate through the app.";
-    public static final String CREDITS = "TBA";
+    public static final String CREDITS = "Ali, Manalibharat, Saad, Stewart";
+
 
     /// Changes activity easier.
     /// Use this method if you want to set some extra for any of the main buttons.
@@ -55,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
         ((DrawerLayout) app.findViewById(R.id.drawer_layout)).addDrawerListener(toggle);
         toggle.syncState();
 
-        ((NavigationView)app.findViewById(R.id.navigation_view)).setNavigationItemSelectedListener(item -> handleMenuClicks(app, credit, info, item));
+        ((NavigationView)app.findViewById(R.id.navigation_view)).setNavigationItemSelectedListener(item -> handleMenuClicks(app, CREDITS, INFO, item));
     }
 
     public static void registerToolbar(AppCompatActivity app, String credit, String info) {

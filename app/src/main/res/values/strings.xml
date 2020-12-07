@@ -6,6 +6,7 @@
     <string name="mainmenu_recipe">Recipe Search</string>
     <string name="mainmenu_covid">COVID-19 Case Data</string>
     <string name="mainmenu_audio">Audio Database</string>
+    <string name="mainmenu_home">Home</string>
 
     <!-- Shared Strings. Put anything you think might be useful for other apps here. -->
     <string name="shared_ok">OK</string>
@@ -29,10 +30,39 @@
     <string name="shared_info">Information</string>
     <string name="shared_credits">Credits</string>
     <string name="shared_exit">Exit</string>
+    <string name="shared_hide">Hide</string>
+    <string name="shared_search_header">Search Results</string>
+    <string name="shared_save">Save</string>
+    <string name="shared_version">Version 1.0</string>
+    <string name="shared_delete_confirm">Are you sure you want to delete?</string>
+    <string name="shared_fav">Do you want to add to favourites?</string>
+    <string name="shared_error">Error!</string>
+    <string name="shared_show_fav">Refresh Favourites</string>
+    <string name="introduction">This App was developed by: Ali, Manalibharat, Saad, and Stewart</string>
+    <string name="main_help">Click a button to go the app</string>
+
 
     <!-- Audio App -->
 
     <!-- Covid App -->
+    <string name="covidCaseData">Covid-19 Data</string>
+    <string name="CovidHeader">Welcome to the Covid Search Page</string>
+    <string name="covidAuthor">Stewart King</string>
+    <string name="covidVersion">Version 1.0</string>
+    <string name="country">Country</string>
+    <string name="dateTwo">Date</string>
+    <string name="hint">Type Here</string>
+    <string name="date">Date(YYYY-MM-DD)</string>
+    <string name="CovidErrTitle">Error</string>
+    <string name="CovidErrMsg">Check Country Name and Date, or check Date Format(YYYY-MM-DD)</string>
+    <string name="menu_help">Help</string>
+    <string name="fav_help">Favourites</string>
+    <string name="CovidWelcome">Welcome to the Covid search page. Enter a country name and date to search. To save the
+    result, press the "favourite" button. To delete a saved record, press and hold the record you want deleted.</string>
+    <string name="homeheader">Welcome to Our App!</string>
+    <string name="countryIs">The Country is: </string>
+    <string name="dateIs">The Date is: </string>
+    <string name="covid_credits">Developer: Stewart King\nStudent Number: 040793799\nFall 2020 CST2335.</string>
 
     <!-- Recipe App -->
     <string name="recipe_ingredients">Ingredients</string>
@@ -48,8 +78,6 @@
     <string name="recipe_database_information">Recipe Database Information</string>
     <string name="recipe_thumbnail">Thumbnail</string>
     <string name="recipe_ingredient_added">Added Ingredient</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <!-- Ticket App -->
 
