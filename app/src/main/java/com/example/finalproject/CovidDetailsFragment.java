@@ -42,6 +42,7 @@ public class CovidDetailsFragment  extends Fragment {
     public CovidDetailsFragment() {
     }
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

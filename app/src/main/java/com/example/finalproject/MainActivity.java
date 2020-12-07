@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setContentView(R.layout.activity_main);
         Toolbar tBar = (Toolbar)findViewById(R.id.hometoolbar);
         //This loads the toolbar, which calls onCreateOptionsMenu below:
-       // setSupportActionBar(tBar);
+        setSupportActionBar(tBar);
         DrawerLayout drawer = findViewById(R.id.homedrawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,
                 drawer, tBar, R.string.shared_open, R.string.shared_close);

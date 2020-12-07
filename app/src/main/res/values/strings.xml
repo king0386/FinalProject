@@ -24,6 +24,10 @@
     <string name="shared_add">Added Successfully!</string>
     <string name="shared_error">Error!</string>
     <string name="shared_delete_confirm">Are you sure you want to delete?</string>
+    <string name="shared_help">Help</string>
+    <string name="shared_info">Information</string>
+    <string name="shared_credits">Credits</string>
+    <string name="shared_exit">Exit</string>
 
     <!-- Audio App -->
 

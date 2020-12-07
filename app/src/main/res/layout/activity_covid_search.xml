@@ -7,6 +7,10 @@
     android:orientation="vertical"
     tools:context=".CovidSearchActivity">
 
+    <include
+        layout="@layout/activity_toolbar"
+        android:id="@+id/toolbar" />
+
     <TextView
         android:id="@+id/header"
         android:layout_height="wrap_content"

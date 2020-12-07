@@ -7,6 +7,10 @@
     tools:context=".CovidDetailsFragment">
 
 
+    <include
+        layout="@layout/activity_toolbar"
+        android:id="@+id/toolbar" />
+
     <RelativeLayout
         android:layout_height="match_parent"
         android:layout_width="wrap_content">
