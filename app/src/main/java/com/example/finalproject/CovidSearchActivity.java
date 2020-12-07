@@ -1,5 +1,6 @@
 package com.example.finalproject;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.ContentValues;
@@ -8,6 +9,8 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -67,6 +70,23 @@ public class CovidSearchActivity extends AppCompatActivity {
      * to connect database and execute sql
      */
     SQLiteDatabase db;
+
+
+    public static final String INFOSTRING = "Click on the buttons to go through each app, or use the hamburger icon " +
+            "(Navigation Drawer) to navigate through the app.";
+    public static final String CREDITSTRING = "Stewart King \n040793799";
+
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        return MainActivity.handleMenuClicks(this, CREDITSTRING, INFOSTRING, item);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.top_app_bar, menu);
+        return true;
+    }
 
     @Override
     /**

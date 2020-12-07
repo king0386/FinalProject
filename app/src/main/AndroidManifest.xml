@@ -18,6 +18,8 @@
         <activity android:name=".TicketMain" />
         <activity android:name=".RecipeMain" />
         <activity android:name=".CovidMain" />
+        <activity android:name=".CovidSearchActivity"/>
+        <activity android:name=".CovidEmptyActivity"/>
         <activity android:name=".AudioMain" />
         <activity android:name=".MainActivity">
             <intent-filter>

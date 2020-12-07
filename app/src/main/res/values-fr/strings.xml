@@ -54,12 +54,12 @@
     <string name="menu_help">Aidez-moi</string>
     <string name="fav_help">Favoris</string>
     <string name="CovidWelcome">Bienvenue sur la page de recherche de Covid. Saisissez un nom de pays et une date à rechercher. Pour sauver le
-    résultat, appuyez sur le bouton "favori". Pour supprimer un enregistrement enregistré, maintenez enfoncée l'enregistrement que vous souhaitez supprimer.</string>
+    résultat, appuyez sur le bouton "favori". Pour supprimer un enregistrement enregistré, maintenez enfoncée l\'enregistrement que vous souhaitez supprimer.</string>
     <string name="homeheader">Bienvenue sur notre application!</string>
     <string name="introduction">Cette application a été développée par: Ali, Manalibharat, Saad, et Stewart</string>
     <string name="countryIs">Le pays c\'est: </string>
     <string name="dateIs">Le Date c\'est: </string>
-    <string name="covid_credits">Développeur: Stewart King\nNuméro d\'étudiant: 040793799\nl' automne 2020 CST2335.</string>
+    <string name="covid_credits">Développeur: Stewart King\nNuméro d\'étudiant: 040793799\nAutomne 2020 CST2335.</string>
 
     <!-- Recipe App -->
     <string name="recipe_ingredients">Ingrédients</string>

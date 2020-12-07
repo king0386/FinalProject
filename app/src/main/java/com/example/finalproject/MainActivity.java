@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
         ((DrawerLayout) app.findViewById(R.id.drawer_layout)).addDrawerListener(toggle);
         toggle.syncState();
 
-        ((NavigationView)app.findViewById(R.id.navigation_view)).setNavigationItemSelectedListener(item -> handleMenuClicks(app, credit, info, item));
+        ((NavigationView)app.findViewById(R.id.navigation_view)).setNavigationItemSelectedListener(item -> handleMenuClicks(app, CREDITS, INFO, item));
     }
 
     public static void registerToolbar(AppCompatActivity app, String credit, String info) {

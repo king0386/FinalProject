@@ -4,7 +4,8 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".MainActivity" >
-    <include layout="@layout/activity_toolbar" android:id="@+id/toolbar"/>
+    <include layout="@layout/activity_toolbar"
+              android:id="@+id/toolbar"/>
 
     <androidx.drawerlayout.widget.DrawerLayout android:id="@+id/drawer_layout"
         android:layout_width="match_parent"

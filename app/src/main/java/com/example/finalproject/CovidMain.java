@@ -43,7 +43,7 @@ import java.util.ArrayList;
  * Main CovidActivity
  * @author Stewart King
  */
-public class CovidMain extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+public class CovidMain extends AppCompatActivity {
     /**
      * SharedPref
      */
@@ -66,15 +66,18 @@ public class CovidMain extends AppCompatActivity implements NavigationView.OnNav
      */
     CovidDetailsFragment dFragment = new CovidDetailsFragment();
 
-    String creditString = "Developer: Stewart King\\nStudent Number: 040793799\\nFall 2020 CST2335.";
-    String infoString = "Welcome to the Covid search page. Enter a country name and date to search. To save the " +
-            "result, press the 'favourite' button. To delete a saved record, press and hold the record you want deleted.";
+    //String creditString = "Developer: Stewart King\\nStudent Number: 040793799\\nFall 2020 CST2335.";
+    //String infoString = "Welcome to the Covid search page. Enter a country name and date to search. To save the " +
+    //        "result, press the 'favourite' button. To delete a saved record, press and hold the record you want deleted.";
+    public static final String INFOSTRING = "Click on the buttons to go through each app, or use the hamburger icon " +
+            "(Navigation Drawer) to navigate through the app.";
+    public static final String CREDITSTRING = "TBA";
 //    String creditString = getResources().getString(R.string.covid_credits);
 //    String infoString = getResources().getString(R.string.CovidWelcome);
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        return MainActivity.handleMenuClicks(this, creditString, infoString, item);
+        return MainActivity.handleMenuClicks(this, CREDITSTRING, INFOSTRING, item);
     }
 
     @Override
@@ -92,11 +95,15 @@ public class CovidMain extends AppCompatActivity implements NavigationView.OnNav
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_covid_main);
+        MainActivity.registerToolbar(this, CREDITSTRING, INFOSTRING, R.string.covidAuthor);
+
+        /**
         MainActivity.registerToolbar(this, creditString, infoString);
+        MainActivity.registerToolbar(this, CREDITSTRING, INFOSTRING);
 
         Toolbar tBar = (Toolbar)findViewById(R.id.toolbar);
-        //This loads the toolbar, which calls onCreateOptionsMenu below:
-        //setSupportActionBar(tBar);
+        This loads the toolbar, which calls onCreateOptionsMenu below:
+        setSupportActionBar(tBar);
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, tBar, R.string.shared_open, R.string.shared_close);
         drawer.addDrawerListener(toggle);
@@ -105,6 +112,7 @@ public class CovidMain extends AppCompatActivity implements NavigationView.OnNav
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+         */
         boolean isTablet = findViewById(R.id.fragment) != null;
         //Get data from the saved file
         prefs=getSharedPreferences("favouriteRecord", Context.MODE_PRIVATE);
@@ -236,7 +244,7 @@ public class CovidMain extends AppCompatActivity implements NavigationView.OnNav
         }
         return true;
     }
-     */
+
     @Override
 
     /**
@@ -244,6 +252,7 @@ public class CovidMain extends AppCompatActivity implements NavigationView.OnNav
      * @param item that was selected
      * @return true to display the item that was selected
      */
+    /**
     public boolean onNavigationItemSelected( MenuItem item) {
         switch(item.getItemId())
         {
@@ -266,7 +275,7 @@ public class CovidMain extends AppCompatActivity implements NavigationView.OnNav
         drawerLayout.closeDrawer(GravityCompat.START);
         return false;
     }
-
+*/
 
     /**
      * Save input to SharedPref
