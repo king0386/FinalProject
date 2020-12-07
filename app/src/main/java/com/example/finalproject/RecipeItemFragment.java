@@ -1,10 +1,5 @@
 package com.example.finalproject;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.res.ResourcesCompat;
-import androidx.fragment.app.FragmentActivity;
-
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -12,57 +7,61 @@ import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Adapter;
+import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Switch;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
 
-import org.w3c.dom.Text;
-
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.InputStream;
-import java.net.HttpURLConnection;
+import java.lang.reflect.Method;
 import java.net.URL;
 import java.net.URLEncoder;
-import java.security.MessageDigest;
+import java.util.function.Function;
 
-public class RecipeItem extends AppCompatActivity {
-    private static final String INFO = "To open the recipe instructions and details in your web browser, " +
-            "simply click the URL (ID) of the recipe and it will load your system web browser.\n" +
-            "To toggle an item in favourites (save or unsave), simply change the checkbox of favourites.";
+/**
+ * create an instance of this fragment.
+ */
+public class RecipeItemFragment extends Fragment {
+    public Bundle data = null;
+    public Context baseContext;
+    public BaseAdapter parentAdapter;
 
     String thumbnail;
 
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        return MainActivity.handleMenuClicks(this, RecipeMain.CREDITS, INFO, item);
+    private View fgmt_view;
+
+    <T extends View> T findViewById(int id) {
+        return fgmt_view.findViewById(id);
+    }
+
+    Context getBaseContext() {
+        return baseContext;
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.top_app_bar, menu);
-        return true;
-    }
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        fgmt_view = inflater.inflate(R.layout.activity_recipe_item, container, false);
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_recipe_item);
-        MainActivity.registerToolbar(this, RecipeMain.CREDITS, INFO, R.string.recipe_view_item);
-
-        Bundle data = getIntent().getExtras();
-
-        if (data == null)
-            finish();
+        fgmt_view.findViewById(R.id.navigation_view).setVisibility(View.GONE);
+        fgmt_view.findViewById(R.id.toolbar).setVisibility(View.GONE);
 
         int id = data.getInt("ItemID");
         boolean from_favourites = data.getBoolean("FavouriteList");
@@ -95,23 +94,27 @@ public class RecipeItem extends AppCompatActivity {
         ((Switch)findViewById(R.id.recipe_item_favourites)).setChecked(item.IsFavourite);
         ((Switch)findViewById(R.id.recipe_item_favourites)).setOnCheckedChangeListener((compoundButton, b) -> {
             if (b)
-                RecipeMain.addRecipe(this, item);
+                RecipeMain.addRecipe(getBaseContext(), item);
             else
-                RecipeMain.removeRecipe(this, item);
+                RecipeMain.removeRecipe(getBaseContext(), item);
 
             Snackbar.make(compoundButton,
                     "\"" + item.Title + "\" " + (item.IsFavourite ? getString(R.string.recipe_favourite_in) : getString(R.string.recipe_favourite_out)),
                     Snackbar.LENGTH_LONG)
                     .setAction(R.string.shared_undo, view -> compoundButton.toggle())
                     .show();
+
+            parentAdapter.notifyDataSetChanged();
         });
 
-        (findViewById(R.id.recipe_item_close)).setOnClickListener(view -> finish());
+        (findViewById(R.id.recipe_item_close)).setOnClickListener(view -> getActivity().getSupportFragmentManager().beginTransaction().remove(this).commit());
+
+        return fgmt_view;
     }
 
     @Override
-    protected void onResume() {
-        super.onResume();
+    public void onStart() {
+        super.onStart();
 
         new RecipeItemTaskHandler().execute("run");
     }
@@ -161,7 +164,7 @@ public class RecipeItem extends AppCompatActivity {
                     Bitmap image = BitmapFactory.decodeStream(is);
                     publishProgress(70);
 
-                    FileOutputStream fos = openFileOutput(filename, Context.MODE_PRIVATE);
+                    FileOutputStream fos = getBaseContext().openFileOutput(filename, Context.MODE_PRIVATE);
                     image.compress(Bitmap.CompressFormat.PNG, 100, fos);
                     publishProgress(80);
 
@@ -174,7 +177,7 @@ public class RecipeItem extends AppCompatActivity {
                     return image;
                 }
 
-                FileInputStream fis = openFileInput(filename);
+                FileInputStream fis = getBaseContext().openFileInput(filename);
                 publishProgress(80);
 
                 Log.i("Item", "Bitmap was cached and loaded successfully.");
@@ -185,4 +188,5 @@ public class RecipeItem extends AppCompatActivity {
             }
         }
     }
+
 }

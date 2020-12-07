@@ -18,6 +18,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.ProgressBar;
@@ -59,6 +60,8 @@ public class RecipeMain extends AppCompatActivity {
 
     ProgressBar progress_bar;
     RecipeMainAdapter listadapter;
+
+    RecipeItemFragment previousFragment;
 
     private void changeActivity(Class<?> cls, Bundle data) {
         Intent intent = new Intent(this, cls);
@@ -179,7 +182,18 @@ public class RecipeMain extends AppCompatActivity {
             data.putInt("ItemID", i);
             data.putBoolean("FavouriteList", false);
 
-            changeActivity(RecipeItem.class, data);
+            if (((FrameLayout)findViewById(R.id.recipe_main_framelayout)) != null) {
+                RecipeItemFragment fgmt = new RecipeItemFragment();
+
+                fgmt.parentAdapter = listadapter;
+                fgmt.baseContext = getBaseContext();
+                fgmt.data = data;
+
+                previousFragment = fgmt;
+
+                getSupportFragmentManager().beginTransaction().replace(R.id.recipe_main_framelayout, fgmt).commit();
+            } else
+                changeActivity(RecipeItem.class, data);
         });
 
         ((ListView)findViewById(R.id.recipe_main_list)).setOnItemLongClickListener((adapterView, view, i, l) -> {
@@ -303,6 +317,9 @@ public class RecipeMain extends AppCompatActivity {
 
             progress_bar.setVisibility(View.VISIBLE);
             QueryRecipes.clear();
+
+            if (previousFragment != null)
+                getSupportFragmentManager().beginTransaction().remove(previousFragment).commit();
         }
 
         @Override
@@ -341,13 +358,14 @@ public class RecipeMain extends AppCompatActivity {
                     }
 
                     ingredients = ingredients.substring(0, ingredients.length() - 1);
-                    ingredients = URLEncoder.encode(ingredients, StandardCharsets.UTF_8.toString())
+                    ingredients = URLEncoder.encode(ingredients,"UTF-8")
                             .toLowerCase();
 
                     String query = URLEncoder.encode(((EditText)RecipeMain.this.findViewById(R.id.recipe_main_query))
                             .getText()
                             .toString()
-                            .toLowerCase());
+                            .toLowerCase(),
+                            "UTF-8");
 
                     URL url = new URL("http://www.recipepuppy.com/api/?i=" + ingredients + "&q=" + query + "&format=json");
 

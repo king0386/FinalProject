@@ -100,7 +100,13 @@ public class MainActivity extends AppCompatActivity {
                 break;
             default:
             case R.id.navbar_exit:
-                app.finishAndRemoveTask();
+                Intent intent = new Intent(Intent.ACTION_MAIN);
+                intent.addCategory(Intent.CATEGORY_HOME);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                app.startActivity(intent);
+                
+                System.exit(1);
                 break;
         }
 

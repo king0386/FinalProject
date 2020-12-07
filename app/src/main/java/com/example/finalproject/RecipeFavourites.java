@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Switch;
@@ -63,7 +64,16 @@ public class RecipeFavourites extends AppCompatActivity {
             data.putInt("ItemID", i);
             data.putBoolean("FavouriteList", true);
 
-            changeActivity(RecipeItem.class, data);
+            if (((FrameLayout)findViewById(R.id.recipe_favourites_framelayout)) != null) {
+                RecipeItemFragment fgmt = new RecipeItemFragment();
+
+                fgmt.parentAdapter = adapter;
+                fgmt.baseContext = getBaseContext();
+                fgmt.data = data;
+
+                getSupportFragmentManager().beginTransaction().replace(R.id.recipe_favourites_framelayout, fgmt).commit();
+            } else
+                changeActivity(RecipeItem.class, data);
         });
 
 
