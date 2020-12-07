@@ -77,6 +77,11 @@ public class CovidSearchActivity extends AppCompatActivity {
     public static final String CREDIT_STRING = "Stewart King \n040793799";
 
 
+    /**
+     * Used for toolbar use
+     * @param item item to be selected
+     * @return whether the item was actually selected
+     */
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         return MainActivity.handleMenuClicks(this, INFO_STRING, CREDIT_STRING, item);

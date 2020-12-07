@@ -18,17 +18,30 @@ public class CovidSearchResult {
 
     }
 
+    /**
+     * 4 arg constructor
+     * @param c country
+     * @param p province
+     * @param ca case number
+     * @param d date
+     */
     public CovidSearchResult( String c,String p,int ca,String d)
     {
-        country=c;
-        province=p;
-        caseNumber=ca;
-        date=d;
+        country = c;
+        province = p;
+        caseNumber = ca;
+        date = d;
     }
+
+    /**
+     * 2 arg constructor
+     * @param p province
+     * @param ca case number
+     */
     public CovidSearchResult( String p,int ca)
     {
-        province=p;
-        caseNumber=ca;
+        province = p;
+        caseNumber = ca;
     }
     /**
      * Getters

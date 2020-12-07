@@ -21,8 +21,11 @@ public class CovidOpener extends SQLiteOpenHelper {
     {
         super(ctx, DATABASE_NAME, null, VERSION_NUM);
     }
-    //This function gets called if no database file exists.
-    //Look on your device in the /data/data/package-name/database directory.
+
+    /**
+     * Gets called if there's no database already
+     * @param db the db that gets created
+     */
     @Override
     public void onCreate(SQLiteDatabase db)
     {
@@ -33,7 +36,13 @@ public class CovidOpener extends SQLiteOpenHelper {
                 +COL_CASE +" INTEGER);");  // add or remove columns
     }
 
-    //this function gets called if the database version on your device is lower than VERSION_NUM
+
+    /**
+     * Upgrade existing database if local version is lower than VERSION_NUM
+     * @param db the database
+     * @param oldVersion old database version
+     * @param newVersion new database version
+     */
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion)
     {   //Drop the old table:
@@ -41,7 +50,13 @@ public class CovidOpener extends SQLiteOpenHelper {
         //Create the new table:
         onCreate(db);
     }
-    //this function gets called if the database version on your device is higher than VERSION_NUM
+
+    /**
+     * Downgrades existing database if local version is higher than VERSION_NUM
+     * @param db the actual database
+     * @param oldVersion old database version
+     * @param newVersion new database version
+     */
     @Override
     public void onDowngrade(SQLiteDatabase db, int oldVersion, int newVersion)
     {   //Drop the old table:

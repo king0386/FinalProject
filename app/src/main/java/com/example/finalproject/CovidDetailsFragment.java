@@ -43,6 +43,13 @@ public class CovidDetailsFragment  extends Fragment {
     }
 
 
+    /**
+     * onCreate similar to MainMethod.
+     * @param inflater inflates view
+     * @param container Container to hold
+     * @param savedInstanceState bundle for passing data
+     * @return the view associated with the fragment
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -59,6 +66,10 @@ public class CovidDetailsFragment  extends Fragment {
         return result;
     }
 
+    /**
+     * Attached fragment to its context
+     * @param context context fragment gets attached to
+     */
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);

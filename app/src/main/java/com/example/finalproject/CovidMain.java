@@ -66,18 +66,28 @@ public class CovidMain extends AppCompatActivity {
      */
     CovidDetailsFragment dFragment = new CovidDetailsFragment();
 
-    private static final String CREDIT_STRING = "Developer: Stewart King\nStudent Number: 040793799\nFall 2020 CST2335.";
+    private static final String CREDIT_STRING = "Developer: Stewart King\nStudent Number: 040793799\nVersion 1.0";
     private static final String INFO_STRING = "Welcome to the Covid search page. Enter a country name and date to search. To save the " +
             "result, press the 'favourite' button. To delete a saved record, press and hold the record you want deleted.";
 
 //    String creditString = getResources().getString(R.string.covid_credits);
 //    String infoString = getResources().getString(R.string.CovidWelcome);
 
+    /**
+     * For toolbar
+     * @param item that is selected
+     * @return true if item was selected, false to continue navigation
+     */
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         return MainActivity.handleMenuClicks(this, CREDIT_STRING, INFO_STRING, item);
     }
 
+    /**
+     *
+     * @param menu
+     * @return
+     */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.covid_main_toolbar, menu);
@@ -273,12 +283,7 @@ public class CovidMain extends AppCompatActivity {
             }
             return view;
         }
-        /**
-         * Get the row id associated with the specified position in the list.
-         *
-         * @param position The position of the item within the adapter's data set whose row id we want.
-         * @return The id of the item at the specified position.
-         */
+
         /**
          * Get Item ID of specific row
          * @param position of item
