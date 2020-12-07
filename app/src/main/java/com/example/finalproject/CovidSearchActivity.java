@@ -72,19 +72,19 @@ public class CovidSearchActivity extends AppCompatActivity {
     SQLiteDatabase db;
 
 
-    public static final String INFOSTRING = "Click on the buttons to go through each app, or use the hamburger icon " +
+    public static final String INFO_STRING = "Click on the buttons to go through each app, or use the hamburger icon " +
             "(Navigation Drawer) to navigate through the app.";
-    public static final String CREDITSTRING = "Stewart King \n040793799";
+    public static final String CREDIT_STRING = "Stewart King \n040793799";
 
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        return MainActivity.handleMenuClicks(this, CREDITSTRING, INFOSTRING, item);
+        return MainActivity.handleMenuClicks(this, INFO_STRING, CREDIT_STRING, item);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.top_app_bar, menu);
+        getMenuInflater().inflate(R.menu.covid_main_toolbar, menu);
         return true;
     }
 

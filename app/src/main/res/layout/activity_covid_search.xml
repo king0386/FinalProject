@@ -12,7 +12,7 @@
         android:layout_height="match_parent"
         android:layout_below="@id/toolbar"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        tools:context=".YourActivityDontForgetDOT">
+        tools:context=".CovidSearchActivity">
 
         <!-- YOUR WHOLE LAYOUT HERE -->
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -32,8 +32,8 @@
                 android:layout_gravity="center"/>
             <ListView
                 android:id="@+id/listView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:transcriptMode="alwaysScroll" />
             <Button

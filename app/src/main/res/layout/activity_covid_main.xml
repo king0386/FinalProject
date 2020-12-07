@@ -12,7 +12,7 @@
         android:layout_height="match_parent"
         android:layout_below="@id/toolbar"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        tools:context=".YourActivityDontForgetDOT">
+        tools:context=".CovidMain">
 
         <LinearLayout
             android:layout_height="wrap_content"
@@ -53,6 +53,12 @@
                 android:layout_gravity="center"
                 android:id="@+id/entrySearch"
                 android:text="@string/shared_search" />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:id="@+id/showFavs"
+                android:text="@string/shared_show_fav" />
 
             <ListView
                 android:layout_width="match_parent"

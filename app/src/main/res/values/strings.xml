@@ -37,6 +37,10 @@
     <string name="shared_delete_confirm">Are you sure you want to delete?</string>
     <string name="shared_fav">Do you want to add to favourites?</string>
     <string name="shared_error">Error!</string>
+    <string name="shared_show_fav">Refresh Favourites</string>
+    <string name="introduction">This App was developed by: Ali, Manalibharat, Saad, and Stewart</string>
+    <string name="main_help">Click a button to go the app</string>
+
 
     <!-- Audio App -->
 
@@ -56,7 +60,6 @@
     <string name="CovidWelcome">Welcome to the Covid search page. Enter a country name and date to search. To save the
     result, press the "favourite" button. To delete a saved record, press and hold the record you want deleted.</string>
     <string name="homeheader">Welcome to Our App!</string>
-    <string name="introduction">This App was developed by: Ali, Manalibharat, Saad, and Stewart</string>
     <string name="countryIs">The Country is: </string>
     <string name="dateIs">The Date is: </string>
     <string name="covid_credits">Developer: Stewart King\nStudent Number: 040793799\nFall 2020 CST2335.</string>
@@ -75,6 +78,24 @@
     <string name="recipe_database_information">Recipe Database Information</string>
     <string name="recipe_thumbnail">Thumbnail</string>
     <string name="recipe_ingredient_added">Added Ingredient</string>
+    <string name="recipe_credits">Developer: Ali Deym\nStudent Number: 040990616\nFall 2020 CST2335.</string>
+    <string name="recipe_main_info">Navigate through the menus by clicking them.\n
+            After searching for an item, you can click the favourite icon to save it.\n
+            By clicking a recipe, you will have more information, as well as the picture of recipe.\n
+            Holding long click on a recipe will give you database information.\n
+            Press the Ingredients button to see the ingredients you are searching for.\n
+            Press the Favourite button (Star) to see your saved recipes.</string>
+    <string name="recipe_ingredients_info">To add an ingredient, simply type it in the edit box and press "Add" button.\n
+            To remove an ingredient, you can use the following options:\n
+            1- Long click on it, and confirm.\n
+            2- Click on remove icon, and confirm.\n\n
+            To read an ingredient in bigger font/size or to know the database ID, simply tap the title of that Ingredient.</string>
+    <string name="recipe_favourites_info">To view an item, simply click on the title of it.\n
+            To see the database information of a recipe, long click it.\n
+            To remove an item from favourites, click the star icon.</string>
+    <string name="recipe_item_info">To open the recipe instructions and details in your web browser,
+            simply click the URL (ID) of the recipe and it will load your system web browser.\n
+            To toggle an item in favourites (save or unsave), simply change the checkbox of favourites.</string>
 
     <!-- Ticket App -->
 

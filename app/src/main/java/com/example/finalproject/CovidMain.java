@@ -66,53 +66,38 @@ public class CovidMain extends AppCompatActivity {
      */
     CovidDetailsFragment dFragment = new CovidDetailsFragment();
 
-    //String creditString = "Developer: Stewart King\\nStudent Number: 040793799\\nFall 2020 CST2335.";
-    //String infoString = "Welcome to the Covid search page. Enter a country name and date to search. To save the " +
-    //        "result, press the 'favourite' button. To delete a saved record, press and hold the record you want deleted.";
-    public static final String INFOSTRING = "Click on the buttons to go through each app, or use the hamburger icon " +
-            "(Navigation Drawer) to navigate through the app.";
-    public static final String CREDITSTRING = "TBA";
+    private static final String CREDIT_STRING = "Developer: Stewart King\nStudent Number: 040793799\nFall 2020 CST2335.";
+    private static final String INFO_STRING = "Welcome to the Covid search page. Enter a country name and date to search. To save the " +
+            "result, press the 'favourite' button. To delete a saved record, press and hold the record you want deleted.";
+
 //    String creditString = getResources().getString(R.string.covid_credits);
 //    String infoString = getResources().getString(R.string.CovidWelcome);
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        return MainActivity.handleMenuClicks(this, CREDITSTRING, INFOSTRING, item);
+        return MainActivity.handleMenuClicks(this, CREDIT_STRING, INFO_STRING, item);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.top_app_bar, menu);
+        getMenuInflater().inflate(R.menu.covid_main_toolbar, menu);
         return true;
     }
 
 
-    @Override
+
     /**
      * onCreate/Main method
      * @param savedInstanceState
      */
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_covid_main);
-        MainActivity.registerToolbar(this, CREDITSTRING, INFOSTRING, R.string.covidAuthor);
+        MainActivity.registerToolbar(this, INFO_STRING, CREDIT_STRING, R.string.covidAuthor);
 
-        /**
-        MainActivity.registerToolbar(this, creditString, infoString);
-        MainActivity.registerToolbar(this, CREDITSTRING, INFOSTRING);
+        loadSavedDataFromDatabase();
 
-        Toolbar tBar = (Toolbar)findViewById(R.id.toolbar);
-        This loads the toolbar, which calls onCreateOptionsMenu below:
-        setSupportActionBar(tBar);
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, tBar, R.string.shared_open, R.string.shared_close);
-        drawer.addDrawerListener(toggle);
-        toggle.syncState();
-
-        NavigationView navigationView = findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
-
-         */
         boolean isTablet = findViewById(R.id.fragment) != null;
         //Get data from the saved file
         prefs=getSharedPreferences("favouriteRecord", Context.MODE_PRIVATE);
@@ -197,85 +182,15 @@ public class CovidMain extends AppCompatActivity {
                 startActivity(searchIntent);
             }
         });
-
+        Button favButton = findViewById(R.id.showFavs);
+        favButton.setOnClickListener(clk -> {
+            dateList.clear();
+            loadSavedDataFromDatabase();
+            savedView.setAdapter(savedAdapter);
+        });
 
 
     }
-
-    /**
-     * Options menu.
-     * @param menu where you place your items.
-     * @return True for menu to be displayed.
-     */
-    /**
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu items for use in the action bar
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.covidmenu, menu);
-        return true;
-    }
-    */
-
-    /**
-     * onOptionsItemSelected called when an item in the menu is selected
-     * @param item that was selected
-     * @return true or false to continue with menu
-     */
-    /**
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch(item.getItemId())
-        {
-            //what to do when the menu item is selected:
-            case R.id.item1:
-                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
-                alertDialogBuilder.setTitle("How to use:")
-                        .setMessage(getResources().getString(R.string.CovidWelcome))
-                        .setNeutralButton("OK", (click, b) -> { })
-                        .setView(getLayoutInflater().inflate(R.layout.alert_layout, null))
-                        .create().show();
-                break;
-            case R.id.item2:
-                dateList.clear();
-                loadSavedDataFromDatabase();
-                savedView.setAdapter(savedAdapter);
-                break;
-        }
-        return true;
-    }
-
-    @Override
-
-    /**
-     * onNavigationItemSelected called when item is selected
-     * @param item that was selected
-     * @return true to display the item that was selected
-     */
-    /**
-    public boolean onNavigationItemSelected( MenuItem item) {
-        switch(item.getItemId())
-        {
-            case R.id.menu1:
-                startActivity(new Intent(this,TicketMain.class));
-                break;
-            case R.id.menu2:
-                startActivity(new Intent(this,RecipeMain.class));
-                break;
-            case R.id.menu3:
-                startActivity(new Intent(this,AudioMain.class));
-                break;
-            case R.id.menu4:
-                finish();
-                break;
-
-        }
-
-        DrawerLayout drawerLayout = findViewById(R.id.drawer_layout);
-        drawerLayout.closeDrawer(GravityCompat.START);
-        return false;
-    }
-*/
 
     /**
      * Save input to SharedPref
