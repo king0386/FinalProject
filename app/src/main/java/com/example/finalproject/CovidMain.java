@@ -9,6 +9,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
@@ -65,6 +66,23 @@ public class CovidMain extends AppCompatActivity implements NavigationView.OnNav
      */
     CovidDetailsFragment dFragment = new CovidDetailsFragment();
 
+    String creditString = "Developer: Stewart King\\nStudent Number: 040793799\\nFall 2020 CST2335.";
+    String infoString = "Welcome to the Covid search page. Enter a country name and date to search. To save the " +
+            "result, press the 'favourite' button. To delete a saved record, press and hold the record you want deleted.";
+//    String creditString = getResources().getString(R.string.covid_credits);
+//    String infoString = getResources().getString(R.string.CovidWelcome);
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        return MainActivity.handleMenuClicks(this, creditString, infoString, item);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.top_app_bar, menu);
+        return true;
+    }
+
 
     @Override
     /**
@@ -74,6 +92,7 @@ public class CovidMain extends AppCompatActivity implements NavigationView.OnNav
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_covid_main);
+        MainActivity.registerToolbar(this, creditString, infoString);
 
         Toolbar tBar = (Toolbar)findViewById(R.id.toolbar);
         //This loads the toolbar, which calls onCreateOptionsMenu below:
@@ -180,6 +199,7 @@ public class CovidMain extends AppCompatActivity implements NavigationView.OnNav
      * @param menu where you place your items.
      * @return True for menu to be displayed.
      */
+    /**
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu items for use in the action bar
@@ -187,13 +207,14 @@ public class CovidMain extends AppCompatActivity implements NavigationView.OnNav
         inflater.inflate(R.menu.covidmenu, menu);
         return true;
     }
-
+    */
 
     /**
      * onOptionsItemSelected called when an item in the menu is selected
      * @param item that was selected
      * @return true or false to continue with menu
      */
+    /**
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch(item.getItemId())
@@ -215,6 +236,7 @@ public class CovidMain extends AppCompatActivity implements NavigationView.OnNav
         }
         return true;
     }
+     */
     @Override
 
     /**
