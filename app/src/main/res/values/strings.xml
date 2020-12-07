@@ -50,7 +50,7 @@
     <string name="hint">Type Here</string>
     <string name="date">Date(YYYY-MM-DD)</string>
     <string name="CovidErrTitle">Error</string>
-    <string name="CovidErrMsg">Check Country Name and Date, or check Date Format(YYYY-MM-DD</string>
+    <string name="CovidErrMsg">Check Country Name and Date, or check Date Format(YYYY-MM-DD)</string>
     <string name="menu_help">Help</string>
     <string name="fav_help">Favourites</string>
     <string name="CovidWelcome">Welcome to the Covid search page. Enter a country name and date to search. To save the
