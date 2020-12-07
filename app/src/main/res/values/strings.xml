@@ -21,6 +21,9 @@
     <string name="shared_fav">Do you want to add to favourites?</string>
     <string name="shared_close">Close</string>
     <string name="shared_version">Version 1.0</string>
+    <string name="shared_add">Added Successfully!</string>
+    <string name="shared_error">Error!</string>
+    <string name="shared_delete_confirm">Are you sure you want to delete?</string>
 
     <!-- Audio App -->
 
@@ -30,6 +33,7 @@
     <string name="covidAuthor">Stewart King</string>
     <string name="covidVersion">Version 1.0</string>
     <string name="country">Country</string>
+    <string name="dateTwo">Date</string>
     <string name="hint">Type Here</string>
     <string name="date">Date(YYYY-MM-DD)</string>
     <string name="CovidErrTitle">Error</string>
@@ -40,6 +44,8 @@
     result, press the "favourite" button. To delete a saved record, click the record you want deleted.</string>
     <string name="homeheader">Welcome to Our App!</string>
     <string name="introduction">This App was developed by: Ali, Manalibharat, Saad, and Stewart</string>
+    <string name="countryIs">The Country is: </string>
+    <string name="dateIs">The Date is: </string>
 
     <!-- Recipe App -->
     

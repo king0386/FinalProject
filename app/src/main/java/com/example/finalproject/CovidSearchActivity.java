@@ -113,11 +113,11 @@ public class CovidSearchActivity extends AppCompatActivity {
                         }
 
                         //  favorites.add(country + ":" +date);
-                        Toast.makeText(this, "Add successfully!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, R.string.shared_add, Toast.LENGTH_SHORT).show();
 
                     })
-                    .setNegativeButton("No", (click, arg) -> {
-                        Snackbar.make(headerView,"You didn't do anything!",BaseTransientBottomBar.LENGTH_LONG).show();
+                    .setNegativeButton(R.string.shared_no, (click, arg) -> {
+                        Snackbar.make(headerView,R.string.shared_error,BaseTransientBottomBar.LENGTH_LONG).show();
                     })
                     .setView(getLayoutInflater().inflate(R.layout.alert_layout, null))
                     .create().show();

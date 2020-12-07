@@ -88,7 +88,7 @@ public class CovidMain extends AppCompatActivity implements NavigationView.OnNav
 
         boolean isTablet = findViewById(R.id.fragment) != null;
         //Get data from the saved file
-        prefs=getSharedPreferences("favoriteRecord", Context.MODE_PRIVATE);
+        prefs=getSharedPreferences("favouriteRecord", Context.MODE_PRIVATE);
         String savedString1 = prefs.getString("country", "");
         String savedString2= prefs.getString("date","");
 
@@ -101,16 +101,16 @@ public class CovidMain extends AppCompatActivity implements NavigationView.OnNav
         savedView.setOnItemLongClickListener((p, b, pos, id)->{
             String selectedRecord = dateList.get(pos);
             AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
-            alertDialogBuilder.setTitle("Do you want to delete it?")
-                    //What is the message:
-                    .setMessage("The country is: " + selectedRecord.substring(11) + "\nThe date is: "+selectedRecord.substring(0,10))
-                    .setPositiveButton("Yes", (click, arg) -> {
+            alertDialogBuilder.setTitle(R.string.shared_delete_confirm)
+                    //AlertDialog message
+                    .setMessage(R.string.countryIs + selectedRecord.substring(11) + "\n"+R.string.dateIs + selectedRecord.substring(0,10))
+                    .setPositiveButton(R.string.shared_yes, (click, arg) -> {
                         dateList.remove(pos);
                         deleteRecord(selectedRecord);
                         getSupportFragmentManager().beginTransaction().remove(dFragment).commit();
                         savedAdapter.notifyDataSetChanged();
                     })
-                    .setNegativeButton("No", (click, arg) -> {
+                    .setNegativeButton(R.string.shared_no, (click, arg) -> {
                     })
                     .setView(getLayoutInflater().inflate(R.layout.row_layout, null))
                     .create().show();
@@ -159,7 +159,7 @@ public class CovidMain extends AppCompatActivity implements NavigationView.OnNav
                 AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
                 alertDialogBuilder.setTitle(getResources().getString(R.string.CovidErrTitle))
                         .setMessage(getResources().getString(R.string.CovidErrMsg))
-                        .setNeutralButton("OK",(click,args)->{})
+                        .setNeutralButton(R.string.shared_ok,(click,args)->{})
                         .create().show();
             }else {
                 Intent searchIntent = new Intent(this, CovidSearchActivity.class);
