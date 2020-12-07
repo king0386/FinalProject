@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".RecipeItem">
+
+    <include
+        layout="@layout/activity_toolbar"
+        android:id="@+id/toolbar" />
+
+    <androidx.drawerlayout.widget.DrawerLayout android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        tools:context=".RecipeItem">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/recipe_item_image"
+                android:layout_width="128dp"
+                android:layout_height="128dp"
+                android:layout_alignParentBottom="false"
+                android:layout_centerHorizontal="true"
+                app:srcCompat="@drawable/recipe_food" />
+
+            <TextView
+                android:id="@+id/recipe_item_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/recipe_item_progressbar"
+                android:text="@string/shared_id_column" />
+
+            <TextView
+                android:id="@+id/recipe_item_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/recipe_item_id"
+                android:text="@string/shared_title" />
+
+            <TextView
+                android:id="@+id/recipe_item_ingredients"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/recipe_item_title"
+                android:text="@string/recipe_ingredients" />
+
+            <ProgressBar
+                android:id="@+id/recipe_item_progressbar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/recipe_item_image"
+                android:layout_alignParentBottom="false"
+                android:visibility="visible" />
+
+            <Switch
+                android:id="@+id/recipe_item_favourites"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/recipe_item_ingredients"
+                android:text="@string/recipe_favourite_toggle"
+                />
+
+        </RelativeLayout>
+
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/navigation_view"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start|left"
+            app:menu="@menu/nav_bar" />
+    </androidx.drawerlayout.widget.DrawerLayout>
+</RelativeLayout>

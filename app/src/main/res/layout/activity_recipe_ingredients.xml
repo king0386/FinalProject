@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".RecipeFavourites">
+    tools:context=".RecipeIngredients">
 
     <include
         layout="@layout/activity_toolbar"
@@ -14,17 +14,37 @@
         android:layout_height="match_parent"
         android:layout_below="@id/toolbar"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        tools:context=".RecipeFavourites">
+        tools:context=".RecipeIngredients">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+            <Button
+                android:id="@+id/recipe_ingredients_add"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:text="@string/shared_add" />
+
+            <EditText
+                android:id="@+id/recipe_ingredients_query"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_toStartOf="@id/recipe_ingredients_add"
+                android:ems="10"
+                android:hint="@string/recipe_ingredient_tooltip"
+                android:inputType="textPersonName" />
+
             <ListView
-                android:id="@+id/recipe_favourites_list"
+                android:id="@+id/recipe_ingredients_list"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:layout_below="@id/recipe_ingredients_query" />
+
         </RelativeLayout>
+
         <com.google.android.material.navigation.NavigationView
             android:id="@+id/navigation_view"
             android:layout_width="wrap_content"
