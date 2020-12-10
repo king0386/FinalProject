@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_artist_name">
+
+    <fragment
+        android:id="@+id/nav_artist_name"
+        android:name="com.audiodatabase.Fragments.ArtistNameFragment"
+        android:label="@string/nav_head"
+        tools:layout="@layout/fragment_artist_name" />
+
+    <fragment
+        android:id="@+id/nav_saved_album"
+        android:name="com.audiodatabase.Fragments.SavedAlbumFragment"
+        android:label="@string/menu_slideshow"
+        tools:layout="@layout/fragment_saved_album" />
+</navigation>
