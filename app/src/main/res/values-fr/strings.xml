@@ -1,2 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <!-- Main Menu strings -->
+    <string name="mainmenu_ticketmaster">Ticket Master</string>
+    <string name="mainmenu_recipe">Recipe Search</string>
+    <string name="mainmenu_covid">COVID-19 Case Data</string>
+    <string name="mainmenu_audio">Audio Database</string>
+
+    <!-- Shared Strings. Put anything you think might be useful for other apps here. -->
+    <string name="shared_ok">OK</string>
+    <string name="shared_yes">Yes</string>
+    <string name="shared_no">No</string>
+    <string name="shared_add">Add</string>
+    <string name="shared_remove">Remove</string>
+    <string name="shared_removed">Removed</string>
+    <string name="shared_delete">Delete</string>
+    <string name="shared_search">Search</string>
+    <string name="shared_search_tooltip">Search…</string>
+    <string name="shared_id">ID</string>
+    <string name="shared_id_column">ID: </string>
+    <string name="shared_name">Name</string>
+    <string name="shared_title">Title</string>
+    <string name="shared_loading">Loading…</string>
+    <string name="shared_undo">Undo</string>
+    <string name="shared_help">Help</string>
+    <string name="shared_info">Information</string>
+    <string name="shared_credits">Credits</string>
+    <string name="shared_exit">Exit</string>
+
+    <!-- Recipe App -->
+    <string name="recipe_ingredients">Ingredients</string>
+    <string name="recipe_ingredient_singular">Ingredient</string>
+    <string name="recipe_ingredient_tooltip">Ingredient…</string>
+    <string name="recipe_favourite_toggle">In Favourites</string>
+    <string name="recipe_favourite_in">Is now in favourites</string>
+    <string name="recipe_favourite_out">Is no longer in favourites</string>
+    <string name="recipe_favourites">Favourites</string>
+    <string name="recipe_view_item">View Item</string>
+    <string name="recipe_ingredient_delete_title">Delete Ingredient</string>
+    <string name="recipe_ingredient_delete">Are you sure you want to delete</string>
+    <string name="recipe_database_information">Recipe Database Information</string>
+    <string name="recipe_thumbnail">Thumbnail</string>
+    <string name="recipe_ingredient_added">Added Ingredient</string>
+
+    <string name="app_name">Base de données audio</string>
+    <string name="serviceError">Le serveur ne répond pas</string>
+    <string name="shared_close">proche</string>
+    <string name="shared_open">Ouvert</string>
+    <string name="title_activity_navigation_drawer">NavigationDrawer</string>
+    <string name="navigation_drawer_open">Ouvrir le tiroir de navigation</string>
+    <string name="navigation_drawer_close">Fermer le panneau de navigation</string>
+    <string name="nav_header_title">Studio Android</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">En-tête de navigation</string>
+    <string name="action_settings">Réglages</string>
+
+    <string name="menu_gallery">Galerie</string>
+    <string name="menu_slideshow">Diaporama</string>
+
+    <string name="author">Auteur: Saad Abdullah</string>
+    <string name="title">Titre: API de base de données audio</string>
+    <string name="version">Version: 1.0</string>
+    <string name="help_alert">Entrez le nom d\'un artiste dans la barre de recherche et cliquez sur Rechercher. Si vous souhaitez enregistrer un album que vous appréciez, veuillez cliquer sur le bouton «Enregistrer l\'album» en haut. Ces albums enregistrés peuvent être consultés en cliquant sur le bouton «Albums enregistrés» dans le menu extensible en haut à gauche. Si vous souhaitez supprimer un album de votre liste enregistrée, cliquez simplement sur l\'album et appuyez sur le bouton «Supprimer l\'album» en haut.</string>
+    <string name="credits">Crédits</string>
+    <string name="help">Aidez-moi</string>
+    <string name="savedalbum">Album enregistré</string>
+    <string name="searchalbum">Rechercher un album</string>
+    <string name="enterartistname">Entrez le nom d\'un artiste</string>
+    <string name="alreadysaved">Album Already Saved</string>
+    <string name="albumsaved">Album déjà enregistré</string>
+    <string name="tracknotfound">Piste de l\'album introuvable</string>
+    <string name="tryagain">Veuillez réessayer</string>
+    <string name="albumdeleted">Album supprimé</string>
+    <string name="albumnotdeleted">Album non supprimé</string>
+    <string name="artistalbumnotfound">Album d\'artiste introuvable</string>
+    <string name="SaveAlbum">Enregistrer l\'album</string>
+    <string name="DeleteAlbum">Supprimer l\'album</string>
+    <string name="search">Chercher</string>
+    <string name="noalbum">Aucun album trouvé</string>
+    <string name="nav_head">API de base de données audio</string>
+    <string name="artistname">Nom d\'artiste</string>
+    <string name="info">Info</string>
+</resources>

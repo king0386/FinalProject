@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.finalproject">
 
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -12,13 +12,27 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".RecipeItem"></activity>
+        <activity android:name=".RecipeItem" />
         <activity android:name=".RecipeIngredients" />
         <activity android:name=".RecipeFavourites" />
         <activity android:name=".TicketMain" />
         <activity android:name=".RecipeMain" />
         <activity android:name=".CovidMain" />
-        <activity android:name=".AudioMain" />
+        <activity
+            android:name="com.example.finalproject.NavigationDrawer"
+            android:label="@string/title_activity_navigation_drawer"
+            android:theme="@style/AppTheme.NoActionBar">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+        <activity android:name="com.example.finalproject.SavedTrack" />
+        <activity android:name="com.example.finalproject.AlbumTrack" />
+        <activity android:name="com.example.finalproject.SearchAlbum" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

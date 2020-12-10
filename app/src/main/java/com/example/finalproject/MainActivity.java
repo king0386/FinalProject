@@ -39,14 +39,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public static void registerToolbar(AppCompatActivity app, String credit, String info, int title) {
-        app.setSupportActionBar((Toolbar)app.findViewById(R.id.toolbar_top));
+        app.setSupportActionBar(app.findViewById(R.id.toolbar_top));
 
         app.getSupportActionBar().setTitle(getTitle(app, title));
 
         Toolbar toolbar = ((RelativeLayout)app.findViewById(R.id.toolbar)).findViewById(R.id.toolbar_top);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 app,
-                (DrawerLayout)app.findViewById(R.id.drawer_layout),
+                app.findViewById(R.id.drawer_layout),
                 toolbar,
                 R.string.shared_open,
                 R.string.shared_close
@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
         switch (menu.getItemId()) {
             case R.id.navbar_audio:
             case R.id.toolbar_audio:
-                changeActivityFromToolbar(app, AudioMain.class);
+                changeActivityFromToolbar(app, NavigationDrawer.class);
                 break;
             case R.id.navbar_covid:
             case R.id.toolbar_covid:
@@ -164,7 +164,7 @@ public class MainActivity extends AppCompatActivity {
         Button recipe_main_btn = findViewById(R.id.mainmenu_recipe);
         Button ticket_main_btn = findViewById(R.id.mainmenu_ticket);
 
-        audio_main_btn.setOnClickListener((View v) -> changeActivity(AudioMain.class));
+        audio_main_btn.setOnClickListener((View v) -> changeActivity(NavigationDrawer.class));
         covid_main_btn.setOnClickListener((View v) -> changeActivity(CovidMain.class));
         recipe_main_btn.setOnClickListener((View v) -> changeActivity(RecipeMain.class));
         ticket_main_btn.setOnClickListener((View v) -> changeActivity(TicketMain.class));
